@@ -17,3 +17,12 @@ fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
   }
 })
 .then(response => { console.debug(response.json()) });
+
+window.onSpotifyWebPlaybackSDKReady = () => {
+	  const userAccessToken = access_token;
+	  const webPlayback = new Spotify.Player({
+	    name: "Spotify Web Playback SDK",
+	    getOAuthToken: callback => { callback(access_token)}
+	  });
+	  webPlayback.connect();
+	};
