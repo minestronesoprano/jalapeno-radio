@@ -34,9 +34,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	  player.addListener('player_state_changed', state => {
 	  	console.log(state);
 	  	if (state.paused) {
-	  		document.getElementByID("playpause").innerHTML = "▶️"
+	  		document.getElementByID("playpause").innerHTML = "▶️ Play"
 	  	} else {
-	  		document.getElementByID("playpause").innerHTML = "⏸️"
+	  		document.getElementByID("playpause").innerHTML = "⏸️ Pause"
 	  	}
 	  });
 
