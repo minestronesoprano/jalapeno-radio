@@ -5,6 +5,11 @@
 		<title>Jalapeño - Spicy Radio</title>
 	</head>
 	<body>
-		<a href="https://accounts.spotify.com/authorize?client_id=c9cbb983f1d34390b6f01643c224afbb&response_type=token&redirect_uri=https:%2F%2Fmshankar58.github.io%2Fjalapeno-radio%2Fplay.html&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state">Hook up Spotify</a>
+		<a id="spotify" href="">Hook up Spotify</a>
+		<script type="text/javascript">
+			var uri = encodeURI(document.URL + "play.html");
+
+			document.getElementById("spotify").href = "https://accounts.spotify.com/authorize?client_id=c9cbb983f1d34390b6f01643c224afbb&response_type=token&redirect_uri=" + uri + "&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state"; 
+		</script>
 	</body>
 </html>
