@@ -66,6 +66,12 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 			},
 			body: `{device_ids:[\"${device_id}\"]}`
 		});
+
+		vslider = document.getElementById('volume'); 
+
+		vslider.onchange = function () {
+			player.setVolume(vslider.value / 100);
+		}
 	});
 
 	// Not Ready
@@ -87,6 +93,4 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 	// Connect to the player!
 	player.connect();
-
-
 };
