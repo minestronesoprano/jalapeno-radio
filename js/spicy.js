@@ -41,7 +41,9 @@ function loadOBJ(){
 	var loader = new THREE.OBJLoader(manager);
 		// load a resource
 		loader.load(
-	'pepper/pepper.obj',spiceSpiceBaby,
+	'pepper/pepper.obj',
+	//called when loading is done
+	addPepper,
 	// called when loading is in progresses
 	function ( xhr ) {
   console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -52,8 +54,7 @@ function ( error ) {
 }
 )};
 
-var spiceSpiceBaby = function(object){
-
+var addPepper = function(object){
 	pepper = object;
 	//Move the banana in the scene
 	//pepper.rotation.x = Math.PI/2;
@@ -70,16 +71,8 @@ var spiceSpiceBaby = function(object){
 	});
 	//Add the 3D object in the scene
 	scene.add(pepper);
-	render();
-};
-
-var render = function () {
-	requestAnimationFrame(render);
-
-	//Turn the banana
-	//pepper.rotation.z += .01;
-
 	renderer.render(scene, camera);
 };
+
 
 init();
