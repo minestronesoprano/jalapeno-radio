@@ -18,20 +18,22 @@
 }
 
 #player {
+	position: absolute;
 	display: flex;
 	flex-direction: row;
+
 	max-width: 600px;
 	min-width: 300px;
-	height: calc(4em + 120px + 20px);
-	background: #262626;
-	position: absolute;
 	left: calc(50% - 200px - 2em);
+	height: calc(4em + 120px + 20px);
 	top: calc(50% - 125px);
+
 	margin-right: calc(50% - 200px - 2em)
 	margin-bottom: 20px;
+	
 	border: 1px solid white;
 	border-radius: 5px;
-
+	background: #262626;
 }
 
 #player p {
@@ -49,9 +51,17 @@ body {
 	background: #0d0d0d;
 	font: white;
 	font-family: assistant;
+	margin: 0;
 }
 
 #volume {
+	position: relative;
 	-webkit-appearance: slider-vertical;
 	width: 2em;
+	height: 90%;
+	top: 5%;
+}
+
+canvas {
+	display: block;
 }
