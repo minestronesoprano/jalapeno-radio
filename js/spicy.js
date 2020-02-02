@@ -57,12 +57,9 @@ function loadOBJ(){
 			});
 			//Add the 3D object in the scene
 			scene.add(pepper);
-			requestAnimationFrame(performance.now());
-
-			//Turn the pepper
-			pepper.rotation.z += .01;
-
-			renderer.render(scene, camera);
+			let bounceControl = false
+			let up = true
+			animate();
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
@@ -74,6 +71,36 @@ function loadOBJ(){
 		}
 	)
 };
+
+
+
+let animate = () => {
+	requestAnimationFrame(animate)
+	obj.rotation.y += 0.01
+	if (bounceControl) {
+		obj.rotation.x = 0
+		obj.rotation.y = 0
+		if (up) {
+			obj.translateOnAxis(new THREE.Vector3(0, 1, 0).normalize(),
+			0.1)
+			if (obj.position.y > 3.4) {
+				up = false
+			}
+		}
+		else if (!up) {
+			obj.translateOnAxis(new THREE.Vector3(0, 1, 0).normalize(),
+			-0.1)
+			if (obj.position.y < -3.4) {
+				up = true
+			}
+		}
+		else {
+			obj.position.set(0, 0, 0)
+		}
+	}
+	renderer.render(scene, camera)
+}
+}
 };
 
 init();
