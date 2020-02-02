@@ -10,7 +10,7 @@ function init(){
 	scene = new THREE.Scene();
 
 	camera = new THREE.PerspectiveCamera(50, ww/wh, 0.1, 10000);
-	camera.position.set(0,0,50);
+	camera.position.set(0,0,40);
 	camera.lookAt(0,0,0)
 	scene.add(camera);
 
@@ -39,7 +39,7 @@ function loadOBJ(){
 		console.log( 'There was an error loading ' + url );
 	};
 
-	var material = new THREE.MeshLambertMaterial( { color: 0x00ff00, emissive: 0x00AA00 } );
+	var material = new THREE.MeshLambertMaterial( { color: 0x00BB00, emissive: 0x118811 } );
 
 	var loader = new THREE.OBJLoader(manager);
 	// load a resource
@@ -57,7 +57,7 @@ function loadOBJ(){
 				}
 			});
 			//Add the 3D object in the scene
-			for (var i = 0; i <= 10; i++) {
+			for (var i = 0; i <= 20; i++) {
 				var pepper = {
 					obj: mesh.clone(),
 					x_mod: Math.random() < 0.5 ? 1 : -1,

@@ -21,15 +21,11 @@
 	position: absolute;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	align-content: center;
 
 	max-width: 600px;
 	min-width: 300px;
-	left: calc(50% - 200px - 2em);
-	height: calc(4em + 120px + 20px);
-	top: calc(50% - 125px);
-
-	margin-right: calc(50% - 200px - 2em)
-	margin-bottom: 20px;
 	
 	border: 1px solid white;
 	border-radius: 5px;
@@ -45,23 +41,33 @@
 	font-size: 1.2em;
 }
 
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
 body {
 	background: darkolivegreen;
 	z-index: -999;
 	background: #0d0d0d;
 	font: white;
 	font-family: assistant;
-	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 #volume {
 	position: relative;
 	-webkit-appearance: slider-vertical;
 	width: 2em;
-	height: 90%;
-	top: 5%;
+	margin-right: 1em;
 }
 
 canvas {
 	display: block;
+	position: fixed;
+	left:0;
+	top:0;
 }
