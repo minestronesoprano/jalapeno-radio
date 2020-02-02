@@ -57,7 +57,12 @@ function loadOBJ(){
 			});
 			//Add the 3D object in the scene
 			scene.add(pepper);
-			render();
+			requestAnimationFrame(performance.now());
+
+			//Turn the pepper
+			pepper.rotation.z += .01;
+
+			renderer.render(scene, camera);
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
@@ -69,14 +74,6 @@ function loadOBJ(){
 		}
 	)
 };
-
-var render = function (pepper) {
-	requestAnimationFrame(render);
-
-	//Turn the pepper
-	pepper.rotation.z += .01;
-
-	renderer.render(scene, camera);
 };
 
 init();
