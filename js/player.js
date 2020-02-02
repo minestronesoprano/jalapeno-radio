@@ -22,7 +22,7 @@ var buttonPP = document.getElementById("playpause");
 
 window.onSpotifyWebPlaybackSDKReady = () => {
 	const player = new Spotify.Player({
-		name: "Spotify Web Playback SDK",
+		name: "Jalapeño - Spicy Radio",
 		getOAuthToken: callback => { callback(access_token); }
 	});
 
@@ -52,12 +52,26 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 		document.getElementById("art").src = track_album_art;
 		document.getElementById("art").hidden = false;
 
-		document.title = "🌶️ " + track_artist + " - " + track_title;
+		document.title = track_artist + " - " + track_title;
 	});
 
 	// Ready
 	player.addListener('ready', ({ device_id }) => {
 		console.log('Ready with Device ID', device_id);
+
+		fetch("https://api.spotify.com/v1/me/player", {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${access_token}`
+			},
+			body: `{"device_ids":["${device_id}"]}`
+		});
+
+		vslider = document.getElementById('volume'); 
+
+		vslider.onchange = function () {
+			player.setVolume(vslider.value / 100);
+		}
 	});
 
 	// Not Ready
@@ -79,6 +93,4 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 	// Connect to the player!
 	player.connect();
-
-
 };
