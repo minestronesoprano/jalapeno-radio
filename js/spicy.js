@@ -69,6 +69,4 @@ function loadOBJ(){
 		}
 	)
 };
-};
-
 init();
