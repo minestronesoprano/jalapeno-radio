@@ -5,9 +5,36 @@
 		<title>Jalapeño - Spicy Radio</title>
 		<link rel="icon" data-emoji="🌶️" type="image/png">
 		<link rel="stylesheet" type="text/css" href="player.css">
+		<style type="text/css">
+			body {
+				color: #55FF55;
+				flex-direction: column;
+			}
+
+			h1 {
+				margin-bottom: 0;
+			}
+
+			#spotify {
+				color: black;
+				background: #55FF55;
+				padding: 1em;
+				border: 1px solid #55FF55;
+				border-radius: 25px;
+				text-decoration: none;
+			}
+
+			#spotify:hover {
+				color: #55FF55;
+				background: black;
+				border: 5px solid #55FF55;
+			}
+		</style>
 	</head>
 	<body>
 		<script src="js/emoji-favicon.js"></script>
+		<h1>🌶️ Jalapeño</h1>
+		<h2>~ Spicy Radio ~</h2>
 		<a id="spotify" href="">Hook up Spotify</a>
 		<script type="text/javascript">
 			var uri = encodeURI(document.URL + "play.html");
