@@ -57,7 +57,6 @@ function loadOBJ(){
 			});
 			//Add the 3D object in the scene
 			scene.add(pepper);
-
 			renderer.render(scene, camera);
 		},
 		// called when loading is in progresses
