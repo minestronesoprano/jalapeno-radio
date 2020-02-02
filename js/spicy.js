@@ -1,4 +1,4 @@
-var renderer, scene, camera, banana;
+var renderer, scene, camera, pepper;
 
 function init(){
 
@@ -50,15 +50,14 @@ function loadOBJ(){
 			pepper.traverse( function ( child ) {
 				//This allow us to check if the children is an instance of the Mesh constructor
 				if(child instanceof THREE.Mesh){
-					child.material.color = 0X006600
+					child.material.color = 0X006600;
 					//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
 					child.geometry.computeVertexNormals();
 				}
 			});
 			//Add the 3D object in the scene
 			scene.add(pepper);
-			renderer.render(scene, camera);
-
+			render();
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
@@ -71,5 +70,13 @@ function loadOBJ(){
 	)
 };
 
+var render = function () {
+	requestAnimationFrame(render);
+
+	//Turn the pepper
+	pepper.rotation.z += .01;
+
+	renderer.render(scene, camera);
+};
 
 init();
