@@ -44,7 +44,21 @@ function loadOBJ(){
 	loader.load(
 		'pepper/pepper.obj',
 		//called when loading is done
-		addPepper,
+		function( pepper ){
+			console.log("addpepper")
+			//Go through all children of the loaded object and search for a Mesh
+			pepper.traverse( function ( child ) {
+				//This allow us to check if the children is an instance of the Mesh constructor
+				if(child instanceof THREE.Mesh){
+					child.material.color = 0xffb830;
+					//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
+					child.geometry.computeVertexNormals();
+				}
+			});
+			//Add the 3D object in the scene
+			scene.add(pepper);
+			renderer.render(scene, camera);
+		},
 		// called when loading is in progresses
 		function ( xhr ) {
 			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
