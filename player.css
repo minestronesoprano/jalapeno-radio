@@ -1,25 +1,42 @@
+@font-face {
+  font-family: assistant;
+  src: url(assistant/Assistant-Regular.ttf);
+}
+
 #art {
 	margin: 1em;
 	float: left;
-	width: 120px;
 	height: auto;
+	width: 30%;
+	padding-left: 100%
 	border: 2px solid black;
+}
+
+#info{
+	padding: 10px;
+	padding-right: 20px;
 }
 
 #player {
 	display: flex;
 	flex-direction: row;
-	width: 50%;
 	max-width: 600px;
-	height: calc(2em + 120px + 4px);
-	background: lawngreen;
+	min-width: 300px;
+	height: calc(4em + 120px + 20px);
+	background: #262626;
 	position: absolute;
 	left: calc(50% - 200px - 2em);
 	top: calc(50% - 125px);
+	margin-right: calc(50% - 200px - 2em)
+	margin-bottom: 20px;
+	border: 1px solid white;
+	border-radius: 5px;
+
 }
 
 #player p {
 	text-align: center;
+	color: white;
 }
 
 #track {
@@ -29,6 +46,9 @@
 body {
 	background: darkolivegreen;
 	z-index: -999;
+	background: #0d0d0d;
+	font: white;
+	font-family: assistant;
 }
 
 #volume {

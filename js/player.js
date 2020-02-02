@@ -13,7 +13,7 @@ var result = location.hash.split("&");
 fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 	method: "GET",
 	headers: {
-		Authorization: `Bearer ${access_token}`     
+		Authorization: `Bearer ${access_token}`
 	}
 })
 .then(response => { console.debug(response.json()) });
@@ -36,9 +36,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	player.addListener('player_state_changed', state => {
 		console.log(state);
 		if (state.paused) {
-			buttonPP.innerHTML = "▶️ Play"
+			buttonPP.src = "images/play-48.png"
 		} else {
-			buttonPP.innerHTML = "⏸️ Pause"
+			buttonPP.src = "images/pause-button-48.png"
 		}
 
 		var track_title = state.track_window.current_track.name;
@@ -67,7 +67,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 			body: `{"device_ids":["${device_id}"]}`
 		});
 
-		vslider = document.getElementById('volume'); 
+		vslider = document.getElementById('volume');
 
 		vslider.onchange = function () {
 			player.setVolume(vslider.value / 100);
@@ -94,3 +94,5 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	// Connect to the player!
 	player.connect();
 };
+
+//Icons by Icons8

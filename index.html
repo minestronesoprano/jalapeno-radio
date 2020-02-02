@@ -4,14 +4,14 @@
 		<meta charset="utf-8">
 		<title>Jalapeño - Spicy Radio</title>
 		<link rel="icon" data-emoji="🌶️" type="image/png">
+		<link rel="stylesheet" type="text/css" href="player.css">
 	</head>
 	<body>
 		<script src="js/emoji-favicon.js"></script>
 		<a id="spotify" href="">Hook up Spotify</a>
 		<script type="text/javascript">
 			var uri = encodeURI(document.URL + "play.html");
-
-			document.getElementById("spotify").href = "https://accounts.spotify.com/authorize?client_id=c9cbb983f1d34390b6f01643c224afbb&response_type=token&redirect_uri=" + uri + "&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state"; 
+			document.getElementById("spotify").href = "https://accounts.spotify.com/authorize?client_id=c9cbb983f1d34390b6f01643c224afbb&response_type=token&redirect_uri=" + uri + "&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state";
 		</script>
 	</body>
 </html>
