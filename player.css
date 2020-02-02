@@ -27,9 +27,10 @@
 	max-width: 600px;
 	min-width: 300px;
 	
-	border: 1px solid white;
+	border: 1px solid #88FF88;
 	border-radius: 5px;
 	background: #262626;
+	color: #AAFFAA;
 }
 
 #player p {
@@ -70,4 +71,16 @@ canvas {
 	position: fixed;
 	left:0;
 	top:0;
+}
+
+#credits {
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+	color: #AAFFAA;
+	font-weight: bold;
+}
+
+#credits a {
+	color: #88FF88;
 }
