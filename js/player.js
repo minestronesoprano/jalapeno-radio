@@ -64,7 +64,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 			headers: {
 				Authorization: `Bearer ${access_token}`
 			},
-			body: `{"device_ids":["${device_id}"], "play": true}`
+			body: `{"device_ids":["${device_id}"]}`
 		});
 
 		vslider = document.getElementById('volume'); 

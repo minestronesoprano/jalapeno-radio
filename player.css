@@ -7,13 +7,14 @@
 }
 
 #player {
-	display: block;
-	min-width: 400px;
-	max-width: 80%;
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	max-width: 600px;
 	height: calc(2em + 120px + 4px);
 	background: lawngreen;
 	position: absolute;
-	left: calc(50% - 200px);
+	left: calc(50% - 200px - 2em);
 	top: calc(50% - 125px);
 }
 
@@ -27,4 +28,9 @@
 
 body {
 	background: darkolivegreen;
+}
+
+#volume {
+	-webkit-appearance: slider-vertical;
+	width: 2em;
 }

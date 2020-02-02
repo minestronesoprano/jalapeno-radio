@@ -11,14 +11,16 @@
 	<script src="https://sdk.scdn.co/spotify-player.js"></script>
 	<div id="player">
 		<img id="art" hidden/>
-		<p id="track"></p>
-		<p><span id="artist"></span> - <span id="album"></span></p>
-		<p>
-			<button id="prev" type="button">Prev</button>
-			<button id="playpause" type="button">Play/Pause</button>
-			<button id="next" type="button">Next</button>
-		</p>
-		<input id="volume" type="range" name="volume" min="0" max="100" value="75">
+		<div id="info">
+			<p id="track"></p>
+			<p><span id="artist"></span> - <span id="album"></span></p>
+			<p>
+				<button id="prev" type="button">Prev</button>
+				<button id="playpause" type="button">Play/Pause</button>
+				<button id="next" type="button">Next</button>
+			</p>
+		</div>
+		<input id="volume" type="range" name="volume" min="0" max="100" value="75" orient="vertical">
 	</div>
 	<script src="js/player.js"></script>
 </body>
