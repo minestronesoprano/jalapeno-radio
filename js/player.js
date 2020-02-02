@@ -36,9 +36,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	player.addListener('player_state_changed', state => {
 		console.log(state);
 		if (state.paused) {
-			buttonPP.innerHTML = "▶️ Play"
+			buttonPP.src = "images/play-48.png"
 		} else {
-			buttonPP.innerHTML = "⏸️ Pause"
+			buttonPP.src = "images/pause-button-48.png"
 		}
 
 		var track_title = state.track_window.current_track.name;
