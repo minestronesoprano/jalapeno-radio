@@ -2,7 +2,7 @@ var renderer, scene, camera, banana;
 
 function init(){
 
-var ww = window.innerWidth, wh = window.innerHeight;
+	var ww = window.innerWidth, wh = window.innerHeight;
 
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(ww, wh);
@@ -26,35 +26,38 @@ var ww = window.innerWidth, wh = window.innerHeight;
 
 function loadOBJ(){
 	var manager = new THREE.LoadingManager();
-  	manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
-    console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-  };
-  	manager.onLoad = function ( ) {
-    console.log( 'Loading complete!');
-  };
-  	manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-    console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-  };
-  	manager.onError = function ( url ) {
-    console.log( 'There was an error loading ' + url );
-  };
+	manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+		console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+	};
+	manager.onLoad = function ( ) {
+		console.log( 'Loading complete!');
+	};
+	manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+		console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+	};
+	manager.onError = function ( url ) {
+		console.log( 'There was an error loading ' + url );
+	};
+
 	var loader = new THREE.OBJLoader(manager);
-		// load a resource
-		loader.load(
-	'pepper/pepper.obj',
-	//called when loading is done
-	addPepper,
-	// called when loading is in progresses
-	function ( xhr ) {
-  console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	},
-// called when loading has errors
-function ( error ) {
-  console.log( 'An error happened' );
-}
-)};
+	// load a resource
+	loader.load(
+		'pepper/pepper.obj',
+		//called when loading is done
+		addPepper,
+		// called when loading is in progresses
+		function ( xhr ) {
+			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		},
+		// called when loading has errors
+		function ( error ) {
+			console.log( 'An error happened' );
+		}
+	)
+};
 
 var addPepper = function(pepper){
+	console.log("addpepper")
 	//Go through all children of the loaded object and search for a Mesh
 	pepper.traverse( function ( child ) {
 		//This allow us to check if the children is an instance of the Mesh constructor
@@ -68,6 +71,5 @@ var addPepper = function(pepper){
 	scene.add(pepper);
 	renderer.render(scene, camera);
 };
-
 
 init();
