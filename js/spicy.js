@@ -51,7 +51,7 @@ function loadOBJ(){
 			pepper.traverse( function ( child ) {
 				//This allow us to check if the children is an instance of the Mesh constructor
 				if(child instanceof THREE.Mesh){
-					child.material.color.setRGB(0, 102, 0)
+					child.material.color = 0X006600
 					//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
 					child.geometry.computeVertexNormals();
 				}
