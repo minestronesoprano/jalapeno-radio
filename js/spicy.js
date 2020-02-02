@@ -44,7 +44,7 @@ function loadOBJ(){
 	loader.load(
 		'pepper/pepper.obj',
 		//called when loading is done
-		addPepper
+		addPepper,
 		// called when loading is in progresses
 		function ( xhr ) {
 			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
