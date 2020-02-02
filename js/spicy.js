@@ -70,7 +70,7 @@ function loadOBJ(){
 	)
 };
 
-var render = function () {
+var render = function (pepper) {
 	requestAnimationFrame(render);
 
 	//Turn the pepper
