@@ -52,6 +52,13 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 		console.log('Device ID has gone offline', device_id);
 	});
 
+	document.getElementById("prev").onclick = function () {
+		player.previousTrack().then(() => console.log('Set to previous track'));
+	}
+
+	document.getElementById("next").onclick = function () {
+		player.nextTrack().then(() => console.log("Set to next track."));
+	}
 
 	buttonPP.onclick = function() {
 		player.togglePlay().then(() => console.log('Toggled playback'));
