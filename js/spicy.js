@@ -72,8 +72,6 @@ function loadOBJ(){
 	)
 };
 
-
-
 let animate = () => {
 	requestAnimationFrame(animate)
 	obj.rotation.y += 0.01
@@ -99,8 +97,6 @@ let animate = () => {
 		}
 	}
 	renderer.render(scene, camera)
-}
-}
 };
 
 init();
