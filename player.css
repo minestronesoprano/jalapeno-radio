@@ -1,0 +1,26 @@
+#art {
+	margin: 1em;
+	float: left;
+	width: 120px;
+	height: auto;
+	border: 2px solid black;
+}
+
+#player {
+	display: block;
+	min-width: 400px;
+	max-width: 80%;
+	height: calc(2em + 120px + 4px);
+	background: lime;
+	position: absolute;
+	left: calc(50% - 200px);
+	top: calc(50% - 125px);
+}
+
+#player p {
+	text-align: center;
+}
+
+#track {
+	font-size: 1.2em;
+}
