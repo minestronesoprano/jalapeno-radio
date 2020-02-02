@@ -22,7 +22,7 @@ var buttonPP = document.getElementById("playpause");
 
 window.onSpotifyWebPlaybackSDKReady = () => {
 	const player = new Spotify.Player({
-		name: "Jalapeno - Spicy Radio",
+		name: "Jalapeño - Spicy Radio",
 		getOAuthToken: callback => { callback(access_token); }
 	});
 
@@ -58,6 +58,14 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	// Ready
 	player.addListener('ready', ({ device_id }) => {
 		console.log('Ready with Device ID', device_id);
+
+		fetch("https://api.spotify.com/v1/me/player", {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${access_token}`
+			},
+			body: `{device_ids:[\"${device_id}\"]}`
+		});
 	});
 
 	// Not Ready

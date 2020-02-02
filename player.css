@@ -11,7 +11,7 @@
 	min-width: 400px;
 	max-width: 80%;
 	height: calc(2em + 120px + 4px);
-	background: lime;
+	background: lawngreen;
 	position: absolute;
 	left: calc(50% - 200px);
 	top: calc(50% - 125px);
@@ -23,4 +23,8 @@
 
 #track {
 	font-size: 1.2em;
+}
+
+body {
+	background: darkolivegreen;
 }
