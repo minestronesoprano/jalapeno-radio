@@ -11,7 +11,8 @@ function init(){
 	scene = new THREE.Scene();
 
 	camera = new THREE.PerspectiveCamera(50,ww/wh, 0.1, 10000 );
-	camera.position.set(0,0,500);
+	camera.position.set(50,0,20);
+	camera.lookAt(0,0,0)
 	scene.add(camera);
 
 	//Add a light in the scene
