@@ -12,10 +12,13 @@
 	width: 50%;
 	max-width: 600px;
 	height: calc(2em + 120px + 4px);
-	background: lawngreen;
+	background: #262626;
 	position: absolute;
 	left: calc(50% - 200px - 2em);
 	top: calc(50% - 125px);
+	border: 1px solid white;
+	border-radius: 5px;
+
 }
 
 #player p {
@@ -27,7 +30,8 @@
 }
 
 body {
-	background: darkolivegreen;
+	background: #0d0d0d;
+	font: white;
 }
 
 #volume {
