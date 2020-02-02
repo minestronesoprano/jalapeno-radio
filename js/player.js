@@ -13,7 +13,7 @@ var result = location.hash.split("&");
 fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 	method: "GET",
 	headers: {
-		Authorization: `Bearer ${access_token}`     
+		Authorization: `Bearer ${access_token}`
 	}
 })
 .then(response => { console.debug(response.json()) });
@@ -67,7 +67,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 			body: `{"device_ids":["${device_id}"]}`
 		});
 
-		vslider = document.getElementById('volume'); 
+		vslider = document.getElementById('volume');
 
 		vslider.onchange = function () {
 			player.setVolume(vslider.value / 100);
@@ -94,3 +94,5 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	// Connect to the player!
 	player.connect();
 };
+
+//Icons by Icons8
