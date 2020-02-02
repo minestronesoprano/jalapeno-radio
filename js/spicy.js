@@ -1,5 +1,7 @@
-var renderer, scene, camera, pepper;
+var renderer, scene, camera;
 var ww = window.innerWidth, wh = window.innerHeight;
+
+var peppers = [];
 
 function init(){
 	renderer = new THREE.WebGLRenderer();
@@ -45,7 +47,6 @@ function loadOBJ(){
 		'pepper/pepper.obj',
 		//called when loading is done
 		function( mesh ){
-			//mesh.rotation.x = Math.PI/2;
 			//Go through all children of the loaded object and search for a Mesh
 			mesh.traverse( function ( child ) {
 				//This allow us to check if the children is an instance of the Mesh constructor
@@ -56,8 +57,21 @@ function loadOBJ(){
 				}
 			});
 			//Add the 3D object in the scene
-			pepper = mesh;
-			scene.add(pepper);
+			for (var i = 0; i <= 10; i++) {
+				var pepper = {
+					obj: mesh.clone(),
+					x_mod: Math.random() < 0.5 ? 1 : -1,
+					y_mod: Math.random() < 0.5 ? 1 : -1
+				}
+				peppers.push(pepper);
+				scene.add(pepper.obj);
+
+				peppers[i].obj.position.x = (Math.random() * (ww/20)) - (ww/40);
+				peppers[i].obj.position.y = (Math.random() * (wh/20)) - (wh/40);
+				peppers[i].obj.rotation.x = Math.random();
+				peppers[i].obj.rotation.y = Math.random();
+				peppers[i].obj.rotation.z = Math.random();
+			}
 			renderer.render(scene, camera);
 		},
 		// called when loading is in progresses
@@ -84,32 +98,36 @@ var scale = 4.0;
 var animate = function () {
 	requestAnimationFrame( animate );
 
-	pepper.rotation.x += rotation_x;
-	pepper.rotation.y += rotation_y;
-	pepper.rotation.y += rotation_z;
+	for (var i = peppers.length - 1; i >= 0; i--) {
+		var pepper = peppers[i];
 
-	if (pepper.position.x > ww/40) {
-		move_x = -Math.abs(move_x);
-		pepper.position.x = ww/40;
+		pepper.obj.rotation.x += rotation_x;
+		pepper.obj.rotation.y += rotation_y;
+		pepper.obj.rotation.y += rotation_z;
+
+		if (pepper.obj.position.x > ww/40) {
+			pepper.x_mod = -1;
+			pepper.obj.position.x = ww/40;
+		}
+		if (pepper.obj.position.y > wh/40) {
+			pepper.y_mod = -1;
+			pepper.obj.position.y = wh/40;
+		} 
+
+		if (pepper.obj.position.x < -ww/40) {
+			pepper.x_mod = 1;
+			pepper.obj.position.x = -ww/40;	
+		} 
+		if (pepper.obj.position.y < -wh/40) {
+			pepper.y_mod = 1;
+			pepper.obj.position.y = -wh/40;
+		}
+
+		pepper.obj.position.x += move_x * pepper.x_mod;
+		pepper.obj.position.y += move_y * pepper.y_mod;
+
+		pepper.obj.scale = scale;
 	}
-	if (pepper.position.y > wh/40) {
-		move_y = -Math.abs(move_y);
-		pepper.position.y = wh/40;
-	} 
-
-	if (pepper.position.x < -ww/40) {
-		move_x = Math.abs(move_x);
-		pepper.position.x = -ww/40;	
-	} 
-	if (pepper.position.y < -wh/40) {
-		move_y = Math.abs(move_y);
-		pepper.position.y = -wh/40;
-	}
-
-	pepper.position.x += move_x;
-	pepper.position.y += move_y;
-
-	pepper.scale = scale;
 
 	renderer.render( scene, camera );
 }
