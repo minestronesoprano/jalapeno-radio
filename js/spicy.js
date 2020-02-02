@@ -46,7 +46,7 @@ function loadOBJ(){
 		'pepper/pepper.obj',
 		//called when loading is done
 		function( pepper ){
-			console.log("addpepper")
+			pepper.rotation.x = Math.PI/2;
 			//Go through all children of the loaded object and search for a Mesh
 			pepper.traverse( function ( child ) {
 				//This allow us to check if the children is an instance of the Mesh constructor
@@ -58,6 +58,9 @@ function loadOBJ(){
 			});
 			//Add the 3D object in the scene
 			scene.add(pepper);
+			requestAnimationFrame(render);
+			//Turn the banana
+			pepper.rotation.z += .01;
 			renderer.render(scene, camera);
 		},
 		// called when loading is in progresses
