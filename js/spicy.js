@@ -10,14 +10,14 @@ function init(){
 	//document.body.appendChild( renderer.domElement );
 	scene = new THREE.Scene();
 
-	camera = new THREE.PerspectiveCamera(50,ww/wh, 0.1, 10000 );
+	camera = new THREE.PerspectiveCamera(50,ww/wh, 0.1, 10000);
 	camera.position.set(50,0,20);
 	camera.lookAt(0,0,0)
 	scene.add(camera);
 
 	//Add a light in the scene
 	directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
-	directionalLight.position.set( 0, 0, 350 );
+	directionalLight.position.set( 200, 10, 350 );
 	directionalLight.lookAt(new THREE.Vector3(0,0,0));
 	scene.add( directionalLight );
 
@@ -51,7 +51,7 @@ function loadOBJ(){
 			pepper.traverse( function ( child ) {
 				//This allow us to check if the children is an instance of the Mesh constructor
 				if(child instanceof THREE.Mesh){
-					child.material.color = 0xffb830;
+					child.material.color.setRGB(0, 102, 0)
 					//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
 					child.geometry.computeVertexNormals();
 				}
