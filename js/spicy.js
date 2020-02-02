@@ -59,7 +59,7 @@ function loadOBJ(){
 			scene.add(pepper);
 			let bounceControl = false
 			let up = true
-			animate();
+			animate(papper);
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
@@ -72,7 +72,7 @@ function loadOBJ(){
 	)
 };
 
-let animate = () => {
+let animate = (obj) => {
 	requestAnimationFrame(animate)
 	obj.rotation.y += 0.01
 	if (bounceControl) {
