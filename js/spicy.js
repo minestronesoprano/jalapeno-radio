@@ -54,10 +54,9 @@ function ( error ) {
 }
 )};
 
-var addPepper = function(object){
-	pepper = object;
+var addPepper = function(pepper){
 	//Go through all children of the loaded object and search for a Mesh
-	object.traverse( function ( child ) {
+	pepper.traverse( function ( child ) {
 		//This allow us to check if the children is an instance of the Mesh constructor
 		if(child instanceof THREE.Mesh){
 			child.material.color = new THREE.Color(0X00FF00);
