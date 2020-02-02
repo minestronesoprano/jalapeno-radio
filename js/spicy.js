@@ -59,7 +59,7 @@ function loadOBJ(){
 			scene.add(pepper);
 			let bounceControl = false
 			let up = true
-			animate(papper);
+			animate(pepper);
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
