@@ -40,6 +40,19 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 		} else {
 			buttonPP.innerHTML = "⏸️ Pause"
 		}
+
+		var track_title = state.track_window.current_track.name;
+		var track_album = state.track_window.current_track.album.name;
+		var track_album_art = state.track_window.current_track.album.images[0].url;
+		var track_artist = state.track_window.current_track.artists[0].name;
+
+		document.getElementById("track").innerHTML = track_title;
+		document.getElementById("artist").innerHTML = track_artist;
+		document.getElementById("album").innerHTML = track_album;
+		document.getElementById("art").src = track_album_art;
+		document.getElementById("art").hidden = false;
+
+		document.title = "🌶️ " + track_artist + " - " + track_title;
 	});
 
 	// Ready
@@ -52,6 +65,13 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 		console.log('Device ID has gone offline', device_id);
 	});
 
+	document.getElementById("prev").onclick = function () {
+		player.previousTrack().then(() => console.log('Set to previous track'));
+	}
+
+	document.getElementById("next").onclick = function () {
+		player.nextTrack().then(() => console.log("Set to next track."));
+	}
 
 	buttonPP.onclick = function() {
 		player.togglePlay().then(() => console.log('Toggled playback'));
@@ -59,4 +79,6 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 	// Connect to the player!
 	player.connect();
+
+
 };
