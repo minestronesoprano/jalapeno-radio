@@ -22,7 +22,7 @@ var buttonPP = document.getElementById("playpause");
 
 window.onSpotifyWebPlaybackSDKReady = () => {
 	const player = new Spotify.Player({
-		name: "Spotify Web Playback SDK",
+		name: "Jalapeno - Spicy Radio",
 		getOAuthToken: callback => { callback(access_token); }
 	});
 
@@ -52,7 +52,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 		document.getElementById("art").src = track_album_art;
 		document.getElementById("art").hidden = false;
 
-		document.title = "🌶️ " + track_artist + " - " + track_title;
+		document.title = track_artist + " - " + track_title;
 	});
 
 	// Ready
