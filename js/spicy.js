@@ -56,10 +56,6 @@ function ( error ) {
 
 var addPepper = function(object){
 	pepper = object;
-	//Move the banana in the scene
-	//pepper.rotation.x = Math.PI/2;
-	pepper.position.y = -200;
-	pepper.position.z = 50;
 	//Go through all children of the loaded object and search for a Mesh
 	object.traverse( function ( child ) {
 		//This allow us to check if the children is an instance of the Mesh constructor
