@@ -3,6 +3,8 @@ var ww = window.innerWidth, wh = window.innerHeight;
 
 var peppers = [];
 
+const TAU = 2 * Math.PI;
+
 function init(){
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(ww, wh);
@@ -66,11 +68,12 @@ function loadOBJ(){
 				peppers.push(pepper);
 				scene.add(pepper.obj);
 
+				peppers[i].obj.position.z = Math.random() * 10 - 5;
 				peppers[i].obj.position.x = (Math.random() * (ww/20)) - (ww/40);
 				peppers[i].obj.position.y = (Math.random() * (wh/20)) - (wh/40);
-				peppers[i].obj.rotation.x = Math.random();
-				peppers[i].obj.rotation.y = Math.random();
-				peppers[i].obj.rotation.z = Math.random();
+				peppers[i].obj.rotation.x = Math.random() * TAU;
+				peppers[i].obj.rotation.y = Math.random() * TAU;
+				peppers[i].obj.rotation.z = Math.random() * TAU;
 			}
 			renderer.render(scene, camera);
 		},

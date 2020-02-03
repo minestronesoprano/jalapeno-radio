@@ -3,13 +3,21 @@
   src: url(assistant/Assistant-Regular.ttf);
 }
 
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -999;
+
+	background: #0d0d0d;
+	font: white;
+	font-family: assistant;
+}
+
 #art {
-	margin: 1em;
-	float: left;
 	height: auto;
-	width: 30%;
-	padding-left: 100%
-	border: 2px solid black;
+	width: 175px;
+	margin-right: 1em;
 }
 
 #info{
@@ -17,20 +25,22 @@
 	padding-right: 20px;
 }
 
+#player, #credits {
+	color: #AAFFAA;
+}
+
 #player {
 	position: absolute;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	align-content: center;
 
 	max-width: 600px;
-	min-width: 300px;
 	
 	border: 1px solid #88FF88;
 	border-radius: 5px;
 	background: #262626;
-	color: #AAFFAA;
+	padding: 1em;
 }
 
 #player p {
@@ -38,32 +48,15 @@
 	color: white;
 }
 
-#track {
-	font-size: 1.2em;
-}
+#track { font-size: 1.2em; }
 
 html, body {
 	height: 100%;
 	margin: 0;
 }
 
-body {
-	background: darkolivegreen;
-	z-index: -999;
-	background: #0d0d0d;
-	font: white;
-	font-family: assistant;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-}
-
 #volume {
-	position: relative;
 	-webkit-appearance: slider-vertical;
-	width: 2em;
-	margin-right: 1em;
 }
 
 canvas {
@@ -77,10 +70,7 @@ canvas {
 	position: fixed;
 	bottom: 1em;
 	left: 1em;
-	color: #AAFFAA;
 	font-weight: bold;
 }
 
-#credits a {
-	color: #88FF88;
-}
+#credits a { color: #88FF88; }
