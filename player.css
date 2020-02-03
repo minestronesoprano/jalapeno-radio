@@ -57,6 +57,7 @@ html, body {
 
 #volume {
 	-webkit-appearance: slider-vertical;
+	width: 1em;
 }
 
 canvas {
