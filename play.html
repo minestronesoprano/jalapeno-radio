@@ -5,8 +5,9 @@
 	<title>Jalapeño - Spicy Radio</title>
 	<link rel="stylesheet" type="text/css" href="player.css">
 	<link rel="icon" data-emoji="🌶️" type="image/png">
+	<script src="https://kit.fontawesome.com/e2c95d3743.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="flex-h">
 	<script src="js/emoji-favicon.js"></script>
 	<!-- Jalapeno -->
 	<script src="js/three.js"></script>
@@ -14,23 +15,25 @@
 	<script src="js/spicy.js"></script>
 	<!-- Player -->
 	<script src="https://sdk.scdn.co/spotify-player.js"></script>
-	<div id="player">
+	<div id="player" class="flex-h">
 		<img id="art" hidden/>
-		<div id="info">
-			<p id="track"></p>
-			<p><span id="artist"></span> - <span id="album"></span></p>
-			<p>
-				<img id="prev" src="images/rewind-button-round-48.png" alt="previous track" role="button">
-				<img id="playpause" src="images/play-48.png" alt="play" role="button">
-				<img id="next" src="images/fast-forward-round-48.png" alt="next track" role="button">
-			</p>
+		<div id="info" class="flex-v">
+			<div id="track"></div>
+			<div><span id="artist"></span> - <span id="album"></span></div>
+			<div id="controls" class="flex-h">
+				<div id="prev" alt="previous track"><i class="fas fa-step-backward"></i></div>
+				<div id="playpause" alt="Play"><i class="fas fa-play-circle"></i></div>
+				<div id="next" alt="next track"><i class="fas fa-step-forward"></i></div>
+			</div>
 		</div>
-		<input id="volume" type="range" name="volume" min="0" max="100" value="75" orient="vertical">
+		<div class="flex-v">
+			<label id="vol_label" for="volume"><i class="fas fa-volume-up"></i></label><input id="volume" type="range" name="volume" min="0" max="100" value="75" orient="vertical">
+		</div>
 	</div>
 	<!-- Credits -->
 	<div id="credits">
-		<a href="https://github.com/mshankar58/jalapeno-radio">Jalapeño on Github</a><br/>
-		Made with spice by <a href="https://github.com/GwyndolynMarchant">Gwyndolyn Marchant</a> and <a href="https://github.com/mshankar58">Maya Shankar</a>
+		<a href="https://github.com/mshankar58/jalapeno-radio">Jalapeño on Github <i class="fab fa-github"></i></a><br/>
+		Made with spice by <a href="https://github.com/GwyndolynMarchant">Gwyndolyn Marchant</a> and <a href="https://github.com/mshankar58">Maya Shankar</a><br/>
 	</div>
 	<script src="js/player.js"></script>
 </body>

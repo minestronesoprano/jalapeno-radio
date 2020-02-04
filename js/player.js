@@ -36,9 +36,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	player.addListener('player_state_changed', state => {
 		console.log(state);
 		if (state.paused) {
-			buttonPP.src = "images/play-48.png"
+			buttonPP.innerHTML = "<i class='fas fa-play-circle'></i>"
 		} else {
-			buttonPP.src = "images/pause-button-48.png"
+			buttonPP.innerHTML = "<i class='fas fa-pause-circle'></i>"
 		}
 
 		var track_title = state.track_window.current_track.name;
@@ -67,10 +67,15 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 			body: `{"device_ids":["${device_id}"]}`
 		});
 
-		vslider = document.getElementById('volume');
+		v_slider = document.getElementById('volume');
+		v_label = document.getElementById('vol_label');
 
-		vslider.onchange = function () {
-			player.setVolume(vslider.value / 100);
+		v_slider.onchange = function () {
+			if (v_slider.value > 50) v_label.innerHTML = "<i class='fas fa-volume-up'></i>";
+			else if (v_slider.value == 0) v_label.innerHTML = "<i class='fas fa-volume-off'></i>";
+			else v_label.innerHTML = "<i class='fas fa-volume-down'></i>";
+
+			player.setVolume(v_slider.value / 100);
 		}
 	});
 

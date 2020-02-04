@@ -71,6 +71,7 @@ function loadOBJ(){
 				peppers[i].obj.position.z = Math.random() * 10 - 5;
 				peppers[i].obj.position.x = (Math.random() * (ww/20)) - (ww/40);
 				peppers[i].obj.position.y = (Math.random() * (wh/20)) - (wh/40);
+				
 				peppers[i].obj.rotation.x = Math.random() * TAU;
 				peppers[i].obj.rotation.y = Math.random() * TAU;
 				peppers[i].obj.rotation.z = Math.random() * TAU;
