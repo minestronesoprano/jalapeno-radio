@@ -27,30 +27,27 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 	});
 
 	// Error handling
-	player.addListener('initialization_error', ({ message }) => { console.error(message); });
-	player.addListener('authentication_error', ({ message }) => { console.error(message); });
-	player.addListener('account_error', ({ message }) => { console.error(message); });
-	player.addListener('playback_error', ({ message }) => { console.error(message); });
+	player.addListener('initialization_error',	({ message }) => { console.error(message); });
+	player.addListener('authentication_error',	({ message }) => { console.error(message); });
+	player.addListener('account_error',			({ message }) => { console.error(message); });
+	player.addListener('playback_error',		({ message }) => { console.error(message); });
 
 	// Playback status updates
 	player.addListener('player_state_changed', state => {
 		console.log(state);
-		if (state.paused) {
-			buttonPP.innerHTML = "<i class='fas fa-play-circle'></i>"
-		} else {
-			buttonPP.innerHTML = "<i class='fas fa-pause-circle'></i>"
-		}
+		if (state.paused)	buttonPP.src = "images/jalaplay.png";
+		else				buttonPP.src = "images/jalapause.png";
 
-		var track_title = state.track_window.current_track.name;
-		var track_album = state.track_window.current_track.album.name;
+		var track_title		= state.track_window.current_track.name;
+		var track_album 	= state.track_window.current_track.album.name;
 		var track_album_art = state.track_window.current_track.album.images[0].url;
-		var track_artist = state.track_window.current_track.artists[0].name;
+		var track_artist	= state.track_window.current_track.artists[0].name;
 
-		document.getElementById("track").innerHTML = track_title;
-		document.getElementById("artist").innerHTML = track_artist;
-		document.getElementById("album").innerHTML = track_album;
-		document.getElementById("art").src = track_album_art;
-		document.getElementById("art").hidden = false;
+		document.getElementById("track").innerHTML	= track_title;
+		document.getElementById("artist").innerHTML	= track_artist;
+		document.getElementById("album").innerHTML	= track_album;
+		document.getElementById("art").src			= track_album_art;
+		document.getElementById("art").hidden		= false;
 
 		document.title = track_artist + " - " + track_title;
 	});

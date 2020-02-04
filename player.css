@@ -36,21 +36,11 @@ body {
 	font-weight: bolder;
 }
 
-#controls svg {
-	height: 2.5em;
+#controls img {
+	height: 3.5em;
 	width: auto;
 	margin: 0.2em;
 	margin-top: 1em;
-	color: #88FF88;
-}
-
-#controls svg:hover {
-	color: white;
-}
-
-#controls div:nth-child(2) svg {
-	height: 3em;
-	width: auto;
 }
 
 #track { font-size: 1.2em; }
