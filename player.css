@@ -25,10 +25,6 @@ body {
 .flex-v { flex-direction: column; }
 .flex-h { flex-direction: row; }
 
-#player, #credits {
-	color: #CCFFCC;
-}
-
 #player {
 	position: absolute;
 	max-width: 600px;
@@ -36,11 +32,8 @@ body {
 	border-radius: 5px;
 	background: #262626;
 	padding: 1em;
-}
-
-#player p {
-	text-align: center;
-	color: white;
+	color: #CCFFCC;
+	font-weight: bolder;
 }
 
 #controls svg {
@@ -48,7 +41,7 @@ body {
 	width: auto;
 	margin: 0.2em;
 	margin-top: 1em;
-	color: #AAFFAA;
+	color: #88FF88;
 }
 
 #controls svg:hover {
@@ -84,6 +77,7 @@ canvas {
 	bottom: 1em;
 	left: 1em;
 	font-weight: bold;
+	color: #CCFFCC;
 }
 
 #credits a { color: #88FF88; }
