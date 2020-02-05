@@ -41,6 +41,12 @@ body {
 #controls > div {
 	font-size: 3.5em;
 	margin: 0.1em;
+	color: #88FF88;
+}
+
+#controls > div:hover {
+	color: #CCFFCC;
+	cursor: pointer;
 }
 
 #controls > div:nth-child(2) { font-size: 4em; }
