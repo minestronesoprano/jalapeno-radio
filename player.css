@@ -36,11 +36,18 @@ body {
 	font-weight: bolder;
 }
 
-#controls img {
-	height: 3.5em;
+#controls { margin-top: 1em; }
+
+#controls > div {
+	font-size: 3.5em;
+	margin: 0.1em;
+}
+
+#controls > div:nth-child(2) { font-size: 4em; }
+
+#controls > div > * {
+	height: 1em;
 	width: auto;
-	margin: 0.2em;
-	margin-top: 1em;
 }
 
 #track { font-size: 1.2em; }
@@ -71,3 +78,11 @@ canvas {
 }
 
 #credits a { color: #88FF88; }
+
+#options {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	font-weight: bold;
+	color: #CCFFCC;
+}

@@ -21,9 +21,9 @@
 			<div id="track"></div>
 			<div><span id="artist"></span> - <span id="album"></span></div>
 			<div id="controls" class="flex-h">
-				<img id="prev" alt="previous track" src="images/jalaback.png"/>
-				<img id="playpause" alt="play/pause" src="images/jalaplay.png"/>
-				<img id="next" alt="next track" src="images/jalaforward.png"/>
+				<div id="prev"><i class="fas fa-step-backward"></i></div>
+				<div id="playpause"><i class="fas fa-play-circle"></i></div>
+				<div id="next"><i class="fas fa-step-forward"></i></div>
 			</div>
 		</div>
 		<div class="flex-v">
@@ -35,6 +35,14 @@
 		<a href="https://github.com/mshankar58/jalapeno-radio">Jalapeño on Github <i class="fab fa-github"></i></a><br/>
 		Made with spice by <a href="https://github.com/GwyndolynMarchant">Gwyndolyn Marchant</a> and <a href="https://github.com/mshankar58">Maya Shankar</a><br/>
 		Pepper icons by <a href="https://cowtato.tumblr.com/">D6016</a>
+	</div>
+	<!-- Options -->
+	<div id="options">
+		<select name="icons" id="option-icons">
+			<option value="FA" selected>FontAwesome</option>
+			<option value="d6016">Pepper Icons</option>
+			<option value="emoji">System Emoji</option>
+		</select>
 	</div>
 	<script src="js/player.js"></script>
 </body>
